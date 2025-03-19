@@ -32,7 +32,7 @@
 
                 <v-list class="bg-transparent">
                   <v-list-item
-                    v-for="(item, index) in forecast"
+                    v-for="(item, index) in forecast.reverse()"
                     :key="index"
                     append-icon="mdi-alert"
                     :color="item.color"
