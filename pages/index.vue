@@ -36,7 +36,7 @@
                     :key="index"
                     append-icon="mdi-alert"
                     :color="item.color"
-                    :title="item.date + ' ' + item.color"
+                    :title="item.date"
                     :subtitle="item.humidity + '%'"
                     :style="`color: ${item.color}`"
                   >
