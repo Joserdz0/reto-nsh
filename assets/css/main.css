@@ -25,7 +25,3 @@
     --gradient-water: linear-gradient(135deg, #00E5FF, #00A8C5); /* Degradado de agua eléctrica */
     --gradient-futuristic: linear-gradient(135deg, #FFD700, #C0C0C0); /* Degradado futurista (dorado a plateado) */
   }
-  .back-app{
-    /* background-color: var(--color-background-primary); */
-
-  }

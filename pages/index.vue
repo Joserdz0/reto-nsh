@@ -37,7 +37,7 @@
                     append-icon="mdi-alert"
                     :color="item.color"
                     :title="item.date + ' ' + item.color"
-                    :subtitle="item.humidity"
+                    :subtitle="item.humidity + '%'"
                     :style="`color: ${item.color}`"
                   >
                   </v-list-item>
