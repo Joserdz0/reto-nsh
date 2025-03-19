@@ -1,0 +1,31 @@
+:root {
+    /* Colores de fondo */
+    --color-background-primary: #000000; /* Negro profundo para el fondo principal */
+    --color-background-secondary: #1A1A1A; /* Gris oscuro para contenedores */
+    --color-background-tertiary: #2E2E2E; /* Gris medio para bordes y divisiones */
+  
+    /* Colores de sequía (cafés metálicos) */
+    --color-drought-primary: #6D4C41; /* Café oscuro con un toque metálico */
+    --color-drought-secondary: #9E7E6E; /* Café claro con reflejos metálicos */
+  
+    /* Colores de agua (azules tecnológicos) */
+    --color-water-primary: #00E5FF; /* Azul eléctrico brillante para representar agua */
+    --color-water-secondary: #00A8C5; /* Azul eléctrico oscuro para detalles o estados inactivos */
+  
+    /* Colores de texto */
+    --color-text-primary: #E0E0E0; /* Gris claro para texto principal */
+    --color-text-secondary: #A0A0A0; /* Gris medio para texto secundario */
+  
+    /* Colores de acento futurista (metálicos y robóticos) */
+    --color-accent-primary: #FFD700; /* Dorado metálico para detalles destacados */
+    --color-accent-secondary: #C0C0C0; /* Plateado para elementos robóticos */
+  
+    /* Degradados */
+    --gradient-drought: linear-gradient(135deg, #6D4C41, #9E7E6E); /* Degradado de sequía metálica */
+    --gradient-water: linear-gradient(135deg, #00E5FF, #00A8C5); /* Degradado de agua eléctrica */
+    --gradient-futuristic: linear-gradient(135deg, #FFD700, #C0C0C0); /* Degradado futurista (dorado a plateado) */
+  }
+  .back-app{
+    background-color: var(--color-background-tertiary);
+
+  }
