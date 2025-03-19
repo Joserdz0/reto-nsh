@@ -26,6 +26,6 @@
     --gradient-futuristic: linear-gradient(135deg, #FFD700, #C0C0C0); /* Degradado futurista (dorado a plateado) */
   }
   .back-app{
-    background-color: var(--color-background-tertiary);
+    /* background-color: var(--color-background-primary); */
 
   }

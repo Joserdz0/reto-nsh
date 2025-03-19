@@ -54,7 +54,7 @@ class ProveedorWeatherApi implements Proveedor {
 
   constructor() {
     this.key = "ffdf6f7db9c6442489b35608251903";
-    this.url = "https://api.weatherapi.com/v1/history.json";
+    this.url = "https://api.weatherapi.com/v1/forecast.json";
   }
 
   async realizarConsulta(lat: string, lng: string, date: string): Promise<any> {
@@ -70,7 +70,7 @@ class ProveedorWeatherApi implements Proveedor {
         return {"Error": data.error.message};
       } else {
 
-        const weather = data.forecast.forecastday[0].day.avghumidity;
+        const weather = data.current.humidity;
         if (weather) {
           result.humidity = weather;
           if (weather < 30) {
@@ -144,42 +144,34 @@ class ProveedorFactory {
 
 // Define la función de manejo de eventos
 export default defineEventHandler(async (event) => {
-  // Obtener los parámetros de la solicitud (puedes obtener parámetros como query, headers, etc.)
   const query = getQuery(event);
 
-  // Asegurarse de que 'provider' sea una cadena
   const provider = String(query.provider ?? 'fake');
   
-  // Validar que 'date' sea una cadena con formato AAAA-MM-DD
   const date = query.date;
   const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
   if (typeof date !== 'string' || !dateRegex.test(date)) {
-    // Maneja el error aquí si la fecha no es válida
     return { error: "Fecha inválida, debe ser en formato AAAA-MM-DD" };
 
   }
   const lat = query.lat;
-  const latRegex = /^-?\d+(\.\d+)?$/; // Validación para número decimal
+  const latRegex = /^-?\d+(\.\d+)?$/; 
   if (typeof lat !== 'string' || !latRegex.test(lat)) {
     return { error: "Latitud inválida, debe ser numéros en formato decimal" };
   }
 
   const lng = query.lng;
-  const lngRegex = /^-?\d+(\.\d+)?$/; // Validación para número decimal
+  const lngRegex = /^-?\d+(\.\d+)?$/;
   if (typeof lng !== 'string' || !lngRegex.test(lng)) {
     return { error: "Longitud inválida, debe ser numeros en formato decimal" };
   }
 
-  // Usamos la fábrica para crear el proveedor según el tipo
   const proveedor = ProveedorFactory.createProveedor(provider);
    if (proveedor) {
-    // Realizamos la consulta con el proveedor seleccionado
     const resultado = await proveedor.realizarConsulta(lat, lng, date);
 
-    // Devolver la respuesta como JSON
     return resultado;
   } else {
-    // Si no se encuentra el proveedor, devolvemos un error
     return { error: "Proveedor no encontrado" };
   } 
 
