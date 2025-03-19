@@ -25,7 +25,7 @@
                   >
 
                 
-                  <v-list-item-subtitle>HUMEDAD: {{ humidity }}%</v-list-item-subtitle>
+                  <v-list-item-subtitle>HUMEDAD: {{ forecast[forecast.length - 1].humidity }}%</v-list-item-subtitle>
                 </v-list-item>
                </div>
 
